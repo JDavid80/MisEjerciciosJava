@@ -17,6 +17,7 @@ public class For2 {
         int Cantidad = 0;
         int Total = 0;
         int CompraAcumulada = 0;
+        double CompraAcumuladaDec = 0;
         String RespuestaUsuario = "";
         
        System.out.println("Lista de Precios");
@@ -27,7 +28,7 @@ public class For2 {
        
        System.out.println("Desea adquirir algún producto?(Si/No)");
        RespuestaUsuario = input.next();
-       
+
        while(RespuestaUsuario.equals("Si"))
        {
             System.out.println("Ingrese el código del producto que desea comprar: ");
@@ -59,7 +60,21 @@ public class For2 {
             System.out.print("Desea comprar algo mas? (Si, No): ");
             RespuestaUsuario = input.next();
        }
-       System.out.println("El valor total de la compra es: " + CompraAcumulada);
+       
+       int cliente = 0;    
+       for(cliente = 1; cliente <= 3; cliente++)
+       {
+            CompraAcumuladaDec = CompraAcumulada * 0.85;
+       }
+       if (cliente <= 3)
+       {
+         System.out.println("Por ser uno de nuestros primeros clientes tendrá un descuento del 15%");
+         System.out.println("El valor total de la compra es: " + CompraAcumuladaDec);
+       }
+       else
+       {
+            System.out.println("El valor total de la compra es: " + CompraAcumulada);
+       }
        //Total = Cantidad * Codigo
        //System.out.println("El valor de la compra es de: " + );
     }
